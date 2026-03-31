@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act-III Music Player</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Act-III Music Player</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="profile">
+            <h2>Profile Dashboard</h2>
+            <div id="stats">
+                <h3>Stats</h3>
+                <!-- Stats content goes here -->
+                <p>Player Level: 10</p>
+                <p>Games Played: 150</p>
+                <p>Badges Earned: 5</p>
+            </div>
+            <div id="tier-list">
+                <h3>Tier List</h3>
+                <!-- Tier list content goes here -->
+                <p>Current Tier: Gold</p>
+            </div>
+            <div id="badges">
+                <h3>Badges</h3>
+                <!-- Badges display goes here -->
+                <ul>
+                    <li>Bronze Badge</li>
+                    <li>Silver Badge</li>
+                    <li>Gold Badge</li>
+                </ul>
+            </div>
+            <div id="monthly-recap">
+                <h3>Monthly Recap</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Chart.js monthly recap
+        var ctx = document.getElementById('monthlyChart').getContext('2d');
+        var monthlyChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Stats Overview',
+                    data: [30, 70, 45, 60],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
